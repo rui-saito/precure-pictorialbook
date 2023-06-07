@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200&display=swap");
+body {
+  background-color: #ead7cc;
+  color: #716a67;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #cf9f96;
+}
+.headerBrock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 70vh;
+}
+.stars1 {
+  width: 12vh;
+  height: 12vh;
+}
+.star1-1 {
+  width: 5vh;
+  height: 5vh;
+  transform: rotate(45deg);
+  margin: 1vh;
+}
+.star1-2 {
+  width: 3vh;
+  height: 3vh;
+  transform: rotate(45deg);
+  margin: 1vh;
+}
+.stars2 {
+  width: 12vh;
+  height: 4vh;
+}
+.star2-1 {
+  width: 3vh;
+  height: 3vh;
+  transform: rotate(45deg);
+  margin: 1vh;
+}
+.star2-2 {
+  width: 5vh;
+  height: 5vh;
+  transform: rotate(45deg);
+  margin: 1vh;
+}
+
+.headerH1 {
+  font-size: 5vh;
+}
+
+@media screen and (max-width: 475px) {
+  /* スクリーンサイズが475px以下の場合に適用 */
+  body {
+    /* background-color: aliceblue; */
+  }
+}
