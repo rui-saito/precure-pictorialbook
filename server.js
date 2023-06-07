@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
     res.send("返すもの")
 })
 app.get("/allData", async (req, res) => {
-    const data = await knex.select("*").from("purecures");
+    const data = await knex.select("*").from("purecures").orderBy("id", "asc");
     console.log(data)
     res.send(data)
 })

@@ -1,7 +1,6 @@
 import React from "react";
-// import { CiImageOff } from "react-icons/ci";
-/* <CiImageOff /> */
 import { BsFillStarFill } from "react-icons/bs";
+
 export const Header = () => {
   return (
     <div className="header">

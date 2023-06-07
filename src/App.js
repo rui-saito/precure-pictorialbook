@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './styles/App.css';
+import './styles/modal.css'
 import { Header } from './components/Header';
 import { Main } from './components/Main';
+import { Footer } from './components/Footer';
+import { Modal } from './components/Modal';
 
 function App() {
   const fetchURL = "http://localhost:8080"
@@ -11,7 +14,7 @@ function App() {
     setView(target);
   }
   // data取得用
-  const [AllData, setAllData] = useState([]);
+  const [allData, setAllData] = useState([]);
   useEffect(() => {
     //  全てのデータを取得する
     (async () => {
@@ -22,6 +25,14 @@ function App() {
     })()
 
   }, [])
+  // footer管理用
+  const [footerStyle, setFooterStyle] = useState("small")
+  const footerChange = (target) => {
+    setFooterStyle(target);
+  }
+
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <div className="App">
       <Header />
@@ -29,12 +40,23 @@ function App() {
         <Main
           view={view}
           changeView={changeView}
-          AllData={AllData}
+          allData={allData}
           setAllData={setAllData}
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
         />
       ) : (
         null
       )}
+      <Footer
+        allData={allData}
+        footerChange={footerChange}
+        footerStyle={footerStyle}
+      />
+      <Modal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
     </div>
   );
 }
