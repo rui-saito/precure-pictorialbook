@@ -1,9 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
-
-body {
-  font-family: "Ubuntu", sans-serif;
-}
-
 .modalArea {
   display: flex;
   justify-content: center;
@@ -19,24 +13,25 @@ body {
 .addItemFrom {
   display: flex;
   flex-direction: column;
-  width: 77vh;
-  height: 53vh;
+  width: 105vh;
+  height: 85vh;
   align-content: center;
   justify-content: flex-start;
-  align-items: center;
-  background-color: #e6dfcb;
+  align-items: flex-start;
+  background-color: #cf9f96;
   border-radius: 2vh;
-  font-family: "Ubuntu", sans-serif;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 .addItemsBrock {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  height: 100%;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  position: fixed;
-  top: 38vh;
-  width: 58vh;
+  align-content: center;
+  flex-wrap: nowrap;
+  margin-left: -8vh;
 }
 .addItems {
   display: flex;
@@ -47,22 +42,40 @@ body {
   align-items: center;
   width: 100%;
 }
+.addItems_img {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50vh;
+  position: absolute;
+  top: 20vh;
+  left: 35vh; */
+  width: 50vh;
+  margin-left: 5%;
+  margin-top: 3%;
+}
 .addItemsBtn {
   position: fixed;
   bottom: 27vh;
 }
 .modalText {
   margin: 1vh;
-  width: 100%;
+  width: 20vh;
+}
+.modalImg {
+  width: 40vh;
 }
 .modalValue {
-  width: 78%;
   padding: 8px 10px;
   border: 1px solid #d2d2d2;
-  border-radius: 20px;
+  border-radius: 2vh;
   background: #f7f7f7;
   color: #333;
   text-align: center;
+  margin: 1vh;
+  width: 35vh;
 }
 
 .modalValue::placeholder {
@@ -72,7 +85,7 @@ body {
   width: 80%;
 }
 .modalTextH {
-  font-family: "Ubuntu", sans-serif;
+  margin-left: 5vh;
 }
 @media (max-width: 376px) {
   /* 600px以下の画面サイズに対するスタイル */

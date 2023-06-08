@@ -25,6 +25,19 @@ function App() {
     })()
 
   }, [])
+  // 選んだデータをモーダルに表示する用
+  const [choiceData, setChoiceData] = useState({
+    id: 1,
+    purecure_name: "",
+    purecure_human_name: "",
+    voice_actor: "",
+    purecure_remarks: "",
+    purecure_series: "",
+    purecure_img: "",
+    purecure_startday: "",
+    purecure_endday: "",
+  });
+
   // footer管理用
   const [footerStyle, setFooterStyle] = useState("small")
   const footerChange = (target) => {
@@ -32,7 +45,9 @@ function App() {
   }
 
   const [modalVisible, setModalVisible] = useState(false);
-
+  useEffect(() => {
+    console.log(choiceData)
+  }, [choiceData])
   return (
     <div className="App">
       <Header />
@@ -44,18 +59,25 @@ function App() {
           setAllData={setAllData}
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
+          choiceData={choiceData}
+          setChoiceData={setChoiceData}
         />
       ) : (
         null
       )}
       <Footer
         allData={allData}
+        setAllData={setAllData}
         footerChange={footerChange}
         footerStyle={footerStyle}
+        fetchURL={fetchURL}
       />
       <Modal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
+        allData={allData}
+        choiceData={choiceData}
+        setChoiceData={setChoiceData}
       />
     </div>
   );

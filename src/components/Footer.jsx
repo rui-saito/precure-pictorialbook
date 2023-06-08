@@ -1,6 +1,24 @@
 import React from "react";
 import { IoColorFilterSharp } from "react-icons/io5";
 export const Footer = (props) => {
+  //   const handleInputChange = (e) => {
+  //     // フォーカスを外す
+  //     e.target.blur();
+  //   };
+
+  const filterFetch = async (e) => {
+    if (e.target.value !== "オールスターズ") {
+      const data = await fetch(
+        `${props.fetchURL}/filterData/${e.target.value}`
+      );
+      const jsonData = await data.json();
+      props.setAllData(jsonData);
+    } else {
+      const data = await fetch(`${props.fetchURL}/allData`);
+      const jsonData = await data.json();
+      props.setAllData(jsonData);
+    }
+  };
   return props.footerStyle === "small" ? (
     <div
       className="footerS"
@@ -21,7 +39,14 @@ export const Footer = (props) => {
       </div>
       <div className="filterBrock">
         <label className="filterLabel">シリーズ</label>
-        <select className="filterTxt">
+        <select
+          className="filterTxt"
+          onBlur={(e) => {
+            // handleInputChange(e);
+            filterFetch(e);
+          }}
+        >
+          <option>オールスターズ</option>
           {Array.from(
             new Set(props.allData.map((el) => el.purecure_series))
           ).map((series, index) => (
