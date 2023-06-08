@@ -7,7 +7,8 @@ import { Footer } from './components/Footer';
 import { Modal } from './components/Modal';
 
 function App() {
-  const fetchURL = "http://localhost:8080"
+  const fetchURL = "https://puricure.onrender.com"
+  // const fetchURL = "http://localhost:8080"
   // 表示切り替え用のuseState
   const [view, setView] = useState("main");
   const changeView = (target) => {
