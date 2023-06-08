@@ -1,8 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap");
+
 body {
   background-color: #ead7cc;
+  /* background-image: url("../image/kirakira.gif"); */
   color: #716a67;
   font-family: "Noto Sans JP", sans-serif;
+  overflow: hidden;
 }
 .header {
   display: flex;
@@ -60,9 +64,26 @@ body {
 }
 
 .headerH1 {
-  font-size: 5vh;
+  font-size: 4vh;
 }
-
+.purecureIcon {
+  width: 17vh;
+  position: absolute;
+  right: 5vh;
+  cursor: pointer;
+  top: 0vh;
+}
+.purecureIcon:hover {
+  animation: 2s linear infinite rotation;
+}
+@keyframes rotation {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
 /* main */
 .main {
   display: flex;
@@ -76,11 +97,33 @@ body {
   position: fixed;
   top: 15vh;
 }
+.new_purecure {
+  z-index: 1;
+  position: absolute;
+  top: 0vh;
+  cursor: pointer;
+  width: 25vh;
+  padding: 8px 10px;
+  border: solid;
+  font-size: 1em;
+  line-height: 1.5;
+  border-radius: 1vh;
+  text-decoration: underline;
+  color: #716a67;
+  background-color: #ead7cc;
+  border-color: #cf9f96;
+  border-width: 4px;
+}
+.new_purecure:hover {
+  background-color: #ead7cc;
+  border-color: #716a67;
+  color: #cf9f96;
+}
 .mainBrock {
   width: 80%;
   max-width: 75vh;
   position: fixed;
-  top: 20vh;
+  top: 23vh;
   max-height: 65vh;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -100,6 +143,12 @@ body {
   border-style: solid;
   border-width: 1px;
 }
+.data:hover {
+  background-color: #cf9f96;
+}
+.data:hover .imageIcon {
+  color: #716a67;
+}
 .imageIcon {
   width: 5vh;
   height: 5vh;
@@ -108,6 +157,11 @@ body {
 }
 .visible {
   color: #cf9f96;
+}
+.createBtn {
+  position: absolute;
+  bottom: 19%;
+  left: 62vh;
 }
 /* footer */
 .footerS {
@@ -123,6 +177,7 @@ body {
   background-color: #cf9f96;
   width: 100%;
   left: 0;
+  cursor: pointer;
 }
 .footerL {
   position: absolute;
@@ -133,10 +188,11 @@ body {
   justify-content: center;
   align-items: center;
   bottom: 0;
-  height: 38vh;
+  height: 26vh;
   background-color: #cf9f96;
   width: 100%;
   left: 0;
+  cursor: pointer;
 }
 .filterHeader {
   display: flex;
@@ -152,6 +208,7 @@ body {
 }
 .filterBrock {
   margin: 3vh;
+  margin-top: 0;
 }
 .filterLabel {
   margin-right: 2vh;
@@ -174,7 +231,7 @@ body {
 }
 @media screen and (max-width: 475px) {
   /* スクリーンサイズが475px以下の場合に適用 */
-  body {
-    /* background-color: aliceblue; */
+  .purecureIcon {
+    display: none;
   }
 }

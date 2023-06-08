@@ -7,6 +7,7 @@ const knex = require("knex")(config);
 const path = require("path");
 
 app.use(express.static(path.join(__dirname, './build')));
+app.use(express.json())
 app.use((req, res, next) => {
     // res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
     res.setHeader(
@@ -35,6 +36,55 @@ app.get("/filterData/:Series", async (req, res) => {
         .orderBy("id", "asc");
     console.log(data);
     res.send(data);
+})
+// create_newPirecure
+app.post("/createPurecure", async (req, res) => {
+    console.log(req.body)
+    let maxId = await knex('purecures').max('id')
+    maxId = await maxId[0].max;
+
+    const obj = req.body;
+    try {
+        await knex("purecures").insert({
+            id: Number(maxId) + 1,
+            purecure_name: obj.purecure_name,
+            purecure_human_name: obj.purecure_human_name,
+            voice_actor: obj.voice_actor,
+            purecure_img: obj.purecure_img,
+            purecure_series: obj.purecure_series,
+            purecure_remarks: obj.purecure_remarks,
+            // purecure_startday: obj.purecure_startday,
+            // purecure_endday: obj.purecure_endday,
+        });
+        const result = await knex.select("*").from("purecures");
+        res.status(200).json(result);
+    } catch (e) {
+        console.error("Error", e);
+        res.status(500);
+    }
+
+})
+// put
+app.put("/putPurecure", async (req, res) => {
+    console.log(req.body);
+    const obj = req.body;
+    try {
+        await knex("purecures").update({
+            purecure_name: obj.purecure_name,
+            purecure_human_name: obj.purecure_human_name,
+            voice_actor: obj.voice_actor,
+            purecure_img: obj.purecure_img,
+            purecure_series: obj.purecure_series,
+            purecure_remarks: obj.purecure_remarks,
+            // purecure_startday: obj.purecure_startday,
+            // purecure_endday: obj.purecure_endday,
+        }).where("id", obj.id);
+        const result = await knex.select("*").from("purecures");
+        res.status(200).json(result);
+    } catch (e) {
+        console.error("Error", e);
+        res.status(500);
+    }
 })
 
 app.get('*', (req, res) => {

@@ -7,6 +7,7 @@ export const Footer = (props) => {
   //   };
 
   const filterFetch = async (e) => {
+    props.setFilterSeries(e.target.value);
     if (e.target.value !== "オールスターズ") {
       const data = await fetch(
         `${props.fetchURL}/filterData/${e.target.value}`
@@ -14,7 +15,7 @@ export const Footer = (props) => {
       const jsonData = await data.json();
       props.setAllData(jsonData);
     } else {
-      const data = await fetch(`${props.fetchURL}/allData`);
+      const data = await fetch(props.fetchURL + "/allData");
       const jsonData = await data.json();
       props.setAllData(jsonData);
     }
@@ -22,6 +23,9 @@ export const Footer = (props) => {
   return props.footerStyle === "small" ? (
     <div
       className="footerS"
+      onMouseEnter={() => {
+        props.footerChange("large");
+      }}
       onClick={() => {
         props.footerChange("large");
       }}
@@ -29,6 +33,9 @@ export const Footer = (props) => {
   ) : (
     <div
       className="footerL"
+      // onMouseLeave={() => {
+      //   props.footerChange("small");
+      // }}
       onDoubleClick={() => {
         props.footerChange("small");
       }}
@@ -42,7 +49,6 @@ export const Footer = (props) => {
         <select
           className="filterTxt"
           onBlur={(e) => {
-            // handleInputChange(e);
             filterFetch(e);
           }}
         >

@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# プリキュア図鑑アプリ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+プリキュア図鑑アプリへようこそ！このアプリは、さまざまなプリキュアキャラクターに関する情報と詳細を提供するためのものです。キャラクターの名前、人間の名前、声優、画像、シリーズ、備考などの情報が含まれています。
 
-## Available Scripts
+## 使用技術
 
-In the project directory, you can run:
+- React: ユーザーインターフェースを構築するための JavaScript ライブラリです。
+- Node.js: サーバーサイド開発に使用される JavaScript のランタイム環境です。
+- PostgreSQL: データの格納に使用されるリレーショナルデータベース管理システムです。
+- デプロイ: アプリは、レンダリングサービスを使用してデプロイされています。
 
-### `npm start`
+## 機能
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- プリキュアキャラクターのコレクションを表示します。
+- 各キャラクターの詳細情報を取得できます。名前、人間の名前、声優、画像、シリーズ、備考などが含まれています。
+- キャラクターの情報を更新できます。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## インストール
 
-### `npm test`
+プリキュア図鑑アプリをローカルで実行するには、以下の手順に従ってください。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. リポジトリをクローンします：`git clone <repository-url>`
+2. プロジェクトディレクトリに移動します：`cd precure-pictorial-book`
+3. 依存関係をインストールします：`npm install`
+4. 開発サーバーを起動します：`npm start`
+5. ブラウザを開いて次の URL にアクセスします：[http://localhost:3000](http://localhost:3000)
 
-### `npm run build`
+注意：システムに Node.js と PostgreSQL がインストールされていることを確認してください。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## データベースのセットアップ
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+アプリのために PostgreSQL データベースをセットアップするには、以下の手順に従ってください。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. PostgreSQL データベースを作成します。
+2. アプリのサーバーファイル（`server.js`）でデータベースの設定を更新し、データベースの詳細を入力します。
+3. データベースマイグレーションを実行して、必要なテーブル構造を作成します。
 
-### `npm run eject`
+## 貢献
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+貢献は歓迎します！バグを見つけた場合や新機能の提案がある場合は、issue
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+を作成してください。また、プルリクエストを送信して修正や改善を提案することもできます。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ライセンス
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+このプロジェクトは [MIT ライセンス](https://opensource.org/licenses/MIT) のもとで公開されています。
 
-## Learn More
+上記の README は、プリキュア図鑑アプリの基本的な説明とセットアップ手順を提供しています。必要に応じて、アプリに関する詳細な情報やユーザーガイドを追加することができます。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+お役に立てれば幸いです。追加の質問があれば、お知らせください。

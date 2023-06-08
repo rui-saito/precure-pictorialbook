@@ -66,6 +66,7 @@
 }
 .modalImg {
   width: 40vh;
+  border-radius: 2vh;
 }
 .modalValue {
   padding: 8px 10px;
@@ -86,6 +87,60 @@
 }
 .modalTextH {
   margin-left: 5vh;
+}
+.createIcon {
+  width: 25vh;
+  height: 25vh;
+  position: absolute;
+  top: 31%;
+  left: 10%;
+}
+.createBtn {
+  background-color: #ead7cc;
+  cursor: pointer;
+  width: 15vh;
+  padding: 8px 10px;
+  border: solid;
+  font-size: 1em;
+  line-height: 1.5;
+  border-radius: 1vh;
+  left: 45%;
+  border-width: 3px;
+  border-color: #716a67;
+  color: #716a67;
+}
+.createIconBrock {
+  width: 34%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+.repealBtn {
+  background-color: #ead7cc;
+  cursor: pointer;
+  width: 12vh;
+  padding: 8px 10px;
+  border: solid;
+  font-size: 1em;
+  line-height: 1.5;
+  border-radius: 1vh;
+  position: absolute;
+  bottom: 20vh;
+  left: 60%;
+  width: 15vh;
+  border-width: 3px;
+  border-color: #716a67;
+  color: #716a67;
+}
+.repealBtn:hover,
+.createBtn:hover {
+  border-color: #ffffff;
+  color: #cf9f96;
 }
 @media (max-width: 376px) {
   /* 600px以下の画面サイズに対するスタイル */
