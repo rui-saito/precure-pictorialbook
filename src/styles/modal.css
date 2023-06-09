@@ -65,8 +65,9 @@
   width: 20vh;
 }
 .modalImg {
-  width: 40vh;
   border-radius: 2vh;
+  width: 34vh;
+  height: 64vh;
 }
 .modalValue {
   padding: 8px 10px;
